@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>スキル登録 — Skill Exchange</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>スキルを登録する</h1>
+      <p class="subtitle">あなたが教えられる・学びたいスキルを簡単に登録しましょう</p>
+    </header>
+
+    <form class="skill-form" id="skillForm" enctype="multipart/form-data" novalidate>
+      <section class="card">
+        <label class="field">
+          <span class="label">スキル名<span class="required">必須</span></span>
+          <input type="text" name="skill_name" placeholder="例：ギター演奏、Webデザイン" required />
+        </label>
+
+        <label class="field">
+          <span class="label">カテゴリ</span>
+          <select name="category" required>
+            <option value="">選択してください</option>
+            <option>音楽</option>
+            <option>プログラミング</option>
+            <option>デザイン</option>
+            <option>語学</option>
+            <option>料理</option>
+            <option>その他</option>
+          </select>
+        </label>
+
+        <div class="row">
+          <label class="field half">
+            <span class="label">提供 / 希望</span>
+            <div class="toggle-group" role="radiogroup" aria-label="提供か希望か">
+              <label class="toggle"><input type="radio" name="mode" value="offer" checked /> 提供する</label>
+              <label class="toggle"><input type="radio" name="mode" value="request" /> 学びたい</label>
+              <label class="toggle"><input type="radio" name="mode" value="both" /> 両方</label>
+            </div>
+          </label>
+
+          <label class="field half">
+            <span class="label">経験年数</span>
+          </label>
+        </div>
+
+        <label class="field">
+          <span class="label">説明（詳細）</span>
+          <textarea name="description" rows="6" placeholder="教えられる内容・条件・使えるツール・言語などを詳しく書いてください"></textarea>
+        </label>
+
+        <label class="field upload">
+          <span class="label">画像アップロード（任意）</span>
+          <input type="file" name="image" accept="image/*" />
+        </label>
+
+        <div class="actions">
+          <button type="submit" class="btn primary">登録する</button>
+          <button type="reset" class="btn ghost">リセット</button>
+        </div>
+      </section>
+    </form>
+
+    <footer class="footer">
+      <small>※公開前に入力内容を必ず確認してください</small>
+    </footer>
+  </main>
+
+  <!-- 簡単なクライアント側バリデーション（任意） -->
+  <script>
+    document.getElementById('skillForm').addEventListener('submit', function(e){
+      const name = this.skill_name.value.trim();
+      if(!name){
+        e.preventDefault();
+        alert('スキル名は必須です。');
+        this.skill_name.focus();
+        return false;
+      }
+      // ここに追加の検証を入れられます
+    });
+  </script>
+</body>
+</html>
