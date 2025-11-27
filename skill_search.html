@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>検索 — Skill Exchange</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .container { max-width: 600px; margin: 40px auto; padding: 20px; font-family: sans-serif; }
+    .card { background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); margin-bottom:20px; }
+    input[type="text"] { width:100%; padding:10px; margin-top:5px; border-radius:8px; border:1px solid #ccc; }
+    #searchResults p { padding:6px 0; border-bottom:1px solid #eee; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>検索</h1>
+      <p>キーワードでスキルを検索できます</p>
+    </header>
+
+    <section class="card">
+      <label>
+        キーワード
+        <input type="text" id="searchInput" placeholder="例：カレー">
+      </label>
+      <div id="searchResults"></div>
+    </section>
+  </main>
+
+  <script>
+    // 擬似データ（他の人が登録したスキルの例）
+    const skills = [
+      {name: "カレーが作れる！", description: "スパイスから本格的に作れます"},
+      {name: "ギター演奏", description: "初心者向けギター教えます"},
+      {name: "Webデザイン", description: "HTML/CSS/JSの基礎"},
+      {name: "パスタ作り", description: "簡単に美味しいパスタが作れます"}
+    ];
+
+    const input = document.getElementById('searchInput');
+    const resultsDiv = document.getElementById('searchResults');
+
+    input.addEventListener('input', function() {
+      const query = this.value.toLowerCase();
+      const results = skills.filter(skill => skill.name.toLowerCase().includes(query));
+      
+      resultsDiv.innerHTML = results.length
+        ? results.map(s => `<p><strong>${s.name}</strong>: ${s.description}</p>`).join('')
+        : "<p>該当するスキルはありません</p>";
+    });
+  </script>
+</body>
+</html>
