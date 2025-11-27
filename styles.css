@@ -1,0 +1,88 @@
+/* ベース */
+:root{
+  --bg:#ffffff;
+  --card:#ffffff;
+  --muted:#7b7f88;
+  --accent:#5b8cff;
+  --accent-2:#3a6be0;
+  --danger:#e05b5b;
+  --radius:12px;
+  --max-width:900px;
+  --gap:16px;
+  font-family: "Noto Sans JP", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:#0b0b0b}
+.container{
+  max-width:var(--max-width);
+  margin:36px auto;
+  padding:20px;
+}
+
+/* ヘッダ */
+.header{margin-bottom:18px}
+.header h1{margin:0;font-size:1.6rem}
+.subtitle{margin:6px 0 0;color:var(--muted);font-size:0.95rem}
+
+/* カード風フォーム */
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow: 0 6px 18px rgba(20,30,60,0.06);
+  display:block;
+}
+
+/* フィールド */
+.field{display:block;margin-bottom:14px}
+.field .label{display:block;font-weight:600;margin-bottom:8px}
+.field .label .required{color:var(--danger);margin-left:8px;font-weight:700;font-size:0.8rem}
+.field input[type="text"],
+.field input[type="number"],
+.field textarea,
+.field select,
+.field input[type="file"]{
+  width:100%;
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid #e6e8ee;
+  font-size:0.96rem;
+  background:linear-gradient(180deg,#fff,#fbfcff);
+  outline:none;
+}
+.field textarea{resize:vertical;min-height:120px}
+.field input:focus, .field textarea:focus, .field select:focus{
+  border-color:var(--accent);
+  box-shadow:0 4px 14px rgba(91,140,255,0.12);
+}
+
+/* 行分割 */
+.row{display:flex;gap:12px}
+.field.half{flex:1}
+
+/* トグル（ラジオ風） */
+.toggle-group{display:flex;gap:8px}
+.toggle{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;border:1px solid #e9eefb;background:#fbfcff;cursor:pointer;font-weight:600}
+.toggle input{display:none}
+
+/* アップロード */
+.upload input[type="file"]{padding:8px 6px}
+.hint{display:block;color:var(--muted);font-size:0.85rem;margin-top:6px}
+
+/* ボタン */
+.actions{display:flex;gap:10px;justify-content:flex-end;margin-top:8px}
+.btn{padding:10px 16px;border-radius:10px;border:none;font-weight:700;cursor:pointer}
+.btn.primary{background:linear-gradient(180deg,var(--accent),var(--accent-2));color:white;box-shadow:0 8px 18px rgba(58,107,224,0.14)}
+.btn.ghost{background:transparent;border:1px solid #e6e8ee;color:var(--muted)}
+
+/* フッタ */
+.footer{margin-top:14px;text-align:center;color:var(--muted);font-size:0.88rem}
+
+/* レスポンシブ */
+@media (max-width:720px){
+  .row{flex-direction:column}
+  .price-row{flex-direction:column}
+  .container{padding:12px}
+  .header h1{font-size:1.2rem}
+}
