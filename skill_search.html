@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>検索 — Skill Exchange</title>
+  <title>スキル検索 — Skill Exchange</title>
   <link rel="stylesheet" href="styles.css">
   <style>
     .container { max-width: 600px; margin: 40px auto; padding: 20px; font-family: sans-serif; }
@@ -15,14 +15,14 @@
 <body>
   <main class="container">
     <header class="header">
-      <h1>検索</h1>
+      <h1>スキル検索</h1>
       <p>キーワードでスキルを検索できます</p>
     </header>
 
     <section class="card">
       <label>
         キーワード
-        <input type="text" id="searchInput" placeholder="例：カレー">
+        <input type="text" id="searchInput" placeholder="例：英語">
       </label>
       <div id="searchResults"></div>
     </section>
@@ -31,9 +31,9 @@
   <script>
     // 擬似データ（他の人が登録したスキルの例）
     const skills = [
-      {name: "カレーが作れる！", description: "スパイスから本格的に作れます"},
+      {name: "英語", description: "ネイティブ英語喋れます!質問もどうぞ〜"},
       {name: "ギター演奏", description: "初心者向けギター教えます"},
-      {name: "Webデザイン", description: "HTML/CSS/JSの基礎"},
+      {name: "Webデザイン", description: "HTML/CSS/JSのプロです!"},
       {name: "パスタ作り", description: "簡単に美味しいパスタが作れます"}
     ];
 
