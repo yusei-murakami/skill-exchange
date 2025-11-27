@@ -11,3 +11,22 @@ body {
     background-color: #ffffff;
     color: #333;
 }
+
+/* 改行のスタイル */
+a {
+    display: block;
+    margin: 10px 0;
+}
+
+/* アクティブなリンクのスタイル */
+a.active {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+/* 丸いボタンのスタイル */
+a{
+    border-radius: 8px;
+    padding: 10px 15px;
+    text-decoration: none;
+}
