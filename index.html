@@ -11,9 +11,20 @@
     <header class="header">
       <h1>スキルを登録する</h1>
       <p class="subtitle">あなたが教えられる・学びたいスキルを簡単に登録しましょう</p>
+      <div id="authArea" style="margin-top:12px;display:flex;gap:8px;align-items:center">
+        <span id="userDisplay" style="color:var(--muted)"></span>
+        <button id="loginBtn" type="button" class="btn ghost">ログイン</button>
+        <button id="logoutBtn" type="button" class="btn ghost" style="display:none">ログアウト</button>
+      </div>
     </header>
 
-    <form class="skill-form" id="skillForm" enctype="multipart/form-data" novalidate>
+    <div id="needLoginNotice" style="margin:16px 0;padding:12px;background:#f7f9ff;border-radius:8px">
+      <p style="margin:0 0 8px 0">スキルを登録するにはログインが必要です。アカウントを作成して登録を開始してください。</p>
+      <button id="noticeLoginBtn" type="button" class="btn primary">新規登録</button>
+    </div>
+
+    <div id="registrationArea" style="display:none">
+      <form class="skill-form" id="skillForm" enctype="multipart/form-data" novalidate>
       <section class="card">
         <label class="field">
           <span class="label">スキル名<span class="required">必須</span></span>
@@ -63,7 +74,8 @@
           <button type="reset" class="btn ghost">リセット</button>
         </div>
       </section>
-    </form>
+      </form>
+    </div>
 
     <footer class="footer">
       <small>※公開前に入力内容を必ず確認してください</small>
@@ -83,5 +95,6 @@
       // ここに追加の検証を入れられます
     });
   </script>
+  <script src="js/auth.js"></script>
 </body>
 </html>
