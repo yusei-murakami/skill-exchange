@@ -1,0 +1,157 @@
+/* リセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 基本スタイル */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ヘッダー */
+.header {
+    margin-bottom: 40px;
+    border-bottom: 2px solid #008080;
+    padding-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 32px;
+    color: #008080;
+    font-weight: 600;
+}
+
+/* メインコンテンツ */
+.main-content {
+    padding: 20px 0;
+}
+
+/* スキルカード一覧コンテナ */
+.skill-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* スキルカード */
+.skill-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.skill-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 128, 128, 0.15);
+    border-color: #008080;
+}
+
+/* スキル名 */
+.skill-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2f4f4f;
+    line-height: 1.2;
+}
+
+/* スキル名の下の線 */
+.skill-name-divider {
+    height: 2px;
+    background-color: #008080;
+    width: 60px;
+    margin: 8px 0;
+}
+
+/* スキル説明 */
+.skill-description {
+    font-size: 14px;
+    color: #999;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* 詳細情報コンテナ */
+.skill-details {
+    display: flex;
+    gap: 40px;
+    margin-top: 8px;
+}
+
+/* 詳細情報アイテム */
+.skill-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.skill-detail-label {
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+    min-width: 70px;
+}
+
+.skill-detail-value {
+    font-size: 14px;
+    color: #2f4f4f;
+    font-weight: 600;
+}
+
+/* 星評価 */
+.star-rating {
+    display: flex;
+    gap: 4px;
+    font-size: 18px;
+}
+
+.star {
+    color: #ffc107;
+}
+
+.star.empty {
+    color: #e0e0e0;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .container {
+        padding: 12px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .skill-card {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .skill-name {
+        font-size: 20px;
+    }
+
+    .skill-details {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .skill-description {
+        font-size: 13px;
+    }
+}
